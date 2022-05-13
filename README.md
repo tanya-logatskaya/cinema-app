@@ -39,19 +39,19 @@ Unauthorized User:
 
 ### Project has multiple endpoints with user and admin access
 
-POST: /register (to create a user) - ALL <br />
-POST: /cinema-halls (to create a cinema hall) - ADMIN <br />
-POST: /movies (to create a movie) - ADMIN <br />
-POST: /movie-sessions (to create a movie sessions) - ADMIN <br />
-POST: /orders/complete (to create an order for current user) - USER <br />
-PUT: /movie-sessions/{id} (to update a movie session) - ADMIN <br />
-PUT: /shopping-carts/movie-sessions (to add movie session to shopping cart) - USER <br />
-DELETE: /movie-sessions/{id} (to delete a movie session) - ADMIN <br />
-GET: /orders (to get order history for current user) - USER <br />
-GET: /shopping-carts/by-user (to get a shopping cart for current user) - USER <br />
-GET: /cinema-halls (to get all cinema halls) - USER or ADMIN <br />
-GET: /movies (to get all movies) - USER or ADMIN <br />
-GET: /movie-sessions/available (to get all available movie by date) - USER or ADMIN <br />
+POST: /register (to create a user) - ALL
+POST: /cinema-halls (to create a cinema hall) - ADMIN
+POST: /movies (to create a movie) - ADMIN
+POST: /movie-sessions (to create a movie sessions) - ADMIN 
+POST: /orders/complete (to create an order for current user) - USER 
+PUT: /movie-sessions/{id} (to update a movie session) - ADMIN 
+PUT: /shopping-carts/movie-sessions (to add movie session to shopping cart) - USER 
+DELETE: /movie-sessions/{id} (to delete a movie session) - ADMIN 
+GET: /orders (to get order history for current user) - USER
+GET: /shopping-carts/by-user (to get a shopping cart for current user) - USER
+GET: /cinema-halls (to get all cinema halls) - USER or ADMIN
+GET: /movies (to get all movies) - USER or ADMIN
+GET: /movie-sessions/available (to get all available movie by date) - USER or ADMIN 
 GET: /users/by-email (to find user by email) - ADMIN
 ---
 ## How To Run This Project
