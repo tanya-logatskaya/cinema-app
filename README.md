@@ -59,7 +59,7 @@ Unauthorized User:
 1. Install and configure Apache Tomcat
 2. Install and configure and create a schema in MySQL
 3. Fork and clone this project
-4. To connect to database in application you need change configuration information in the file from /resources/db.properties to the ones you specified when installing MySQL
+4. To connect to database in application you need to fill in configuration information in the file from /resources/db.properties that are specified when installing MySQL
 5. Finally, you can start the application
 
 After running the application you will be redirected to login page. You can use:
