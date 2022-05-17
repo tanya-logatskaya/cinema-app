@@ -3,7 +3,7 @@
 ---
 This project is designed to imitate the work of the simple cinema service app with user authentication
 ---
-### The diagram below represents connections, built inside this app
+### The diagram below represents classes and connections between entities, built inside this app
 ![pic](src/main/resources/images/Hibernate_Cinema_Uml.png)
 ---
 ## App functions
