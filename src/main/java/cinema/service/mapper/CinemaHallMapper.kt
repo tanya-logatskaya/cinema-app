@@ -1,27 +1,25 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-import cinema.dto.request.CinemaHallRequestDto;
-import cinema.dto.response.CinemaHallResponseDto;
-import cinema.model.CinemaHall;
-import org.springframework.stereotype.Component;
+import cinema.dto.CinemaHallRequestDto
+import cinema.dto.CinemaHallResponseDto
+import cinema.model.CinemaHall
+import org.springframework.stereotype.Component
 
 @Component
-public class CinemaHallMapper implements RequestDtoMapper<CinemaHallRequestDto, CinemaHall>,
-        ResponseDtoMapper<CinemaHallResponseDto, CinemaHall> {
-    @Override
-    public CinemaHall mapToModel(CinemaHallRequestDto dto) {
-        CinemaHall cinemaHall = new CinemaHall();
-        cinemaHall.setDescription(dto.getDescription());
-        cinemaHall.setCapacity(dto.getCapacity());
-        return cinemaHall;
+class CinemaHallMapper : RequestDtoMapper<CinemaHallRequestDto?, CinemaHall?>,
+    ResponseDtoMapper<CinemaHallResponseDto?, CinemaHall?> {
+    override fun mapToModel(dto: CinemaHallRequestDto?): CinemaHall {
+        val cinemaHall = CinemaHall()
+        cinemaHall.description = dto?.description
+        cinemaHall.capacity = dto?.capacity
+        return cinemaHall
     }
 
-    @Override
-    public CinemaHallResponseDto mapToDto(CinemaHall cinemaHall) {
-        CinemaHallResponseDto responseDto = new CinemaHallResponseDto();
-        responseDto.setId(cinemaHall.getId());
-        responseDto.setCapacity(cinemaHall.getCapacity());
-        responseDto.setDescription(cinemaHall.getDescription());
-        return responseDto;
+    override fun mapToDto(cinemaHall: CinemaHall?): CinemaHallResponseDto {
+        val responseDto = CinemaHallResponseDto()
+        responseDto.id = cinemaHall?.id
+        responseDto.capacity = cinemaHall?.capacity
+        responseDto.description = cinemaHall?.description
+        return responseDto
     }
 }

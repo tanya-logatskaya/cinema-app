@@ -1,16 +1,15 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-import cinema.dto.response.UserResponseDto;
-import cinema.model.User;
-import org.springframework.stereotype.Component;
+import cinema.dto.UserResponseDto
+import cinema.model.User
+import org.springframework.stereotype.Component
 
 @Component
-public class UserMapper implements ResponseDtoMapper<UserResponseDto, User> {
-    @Override
-    public UserResponseDto mapToDto(User user) {
-        UserResponseDto responseDto = new UserResponseDto();
-        responseDto.setId(user.getId());
-        responseDto.setEmail(user.getEmail());
-        return responseDto;
+class UserMapper : ResponseDtoMapper<UserResponseDto?, User?> {
+    override fun mapToDto(user: User?): UserResponseDto {
+        val responseDto = UserResponseDto()
+        responseDto.id = user?.id
+        responseDto.email = user?.email
+        return responseDto
     }
 }

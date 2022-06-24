@@ -1,24 +1,21 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-import cinema.dto.response.OrderResponseDto;
-import cinema.model.Order;
-import cinema.model.Ticket;
-import org.springframework.stereotype.Component;
-
-import java.util.stream.Collectors;
+import cinema.dto.OrderResponseDto
+import cinema.model.Order
+import cinema.model.Ticket
+import org.springframework.stereotype.Component
+import java.util.stream.Collectors
 
 @Component
-public class OrderMapper implements ResponseDtoMapper<OrderResponseDto, Order> {
-    @Override
-    public OrderResponseDto mapToDto(Order order) {
-        OrderResponseDto responseDto = new OrderResponseDto();
-        responseDto.setId(order.getId());
-        responseDto.setUserId(order.getUser().getId());
-        responseDto.setOrderTime(order.getOrderTime());
-        responseDto.setTicketIds(order.getTickets()
-                .stream()
-                .map(Ticket::getId)
-                .collect(Collectors.toList()));
-        return responseDto;
+class OrderMapper : ResponseDtoMapper<OrderResponseDto?, Order?> {
+    override fun mapToDto(order: Order?): OrderResponseDto? {
+        val responseDto = OrderResponseDto()
+        responseDto.id = order?.id
+        responseDto.userId = order?.user?.id
+        responseDto.orderTime = order?.orderTime
+        responseDto.ticketIds = order?.tickets
+            ?.map { it.id }
+            ?.toList()
+        return responseDto
     }
 }

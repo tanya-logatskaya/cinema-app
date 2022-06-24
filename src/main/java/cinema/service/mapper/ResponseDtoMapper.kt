@@ -1,5 +1,5 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-public interface ResponseDtoMapper<D, T> {
-    D mapToDto(T t);
+interface ResponseDtoMapper<D, T> {
+    fun mapToDto(t: T): D
 }

@@ -1,27 +1,24 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-import cinema.dto.request.MovieRequestDto;
-import cinema.dto.response.MovieResponseDto;
-import cinema.model.Movie;
-import org.springframework.stereotype.Component;
+import cinema.dto.MovieRequestDto
+import cinema.dto.MovieResponseDto
+import cinema.model.Movie
+import org.springframework.stereotype.Component
 
 @Component
-public class MovieMapper implements RequestDtoMapper<MovieRequestDto, Movie>,
-        ResponseDtoMapper<MovieResponseDto, Movie> {
-    @Override
-    public Movie mapToModel(MovieRequestDto dto) {
-        Movie movie = new Movie();
-        movie.setTitle(dto.getTitle());
-        movie.setDescription(dto.getDescription());
-        return movie;
+class MovieMapper : RequestDtoMapper<MovieRequestDto?, Movie?>, ResponseDtoMapper<MovieResponseDto?, Movie?> {
+    override fun mapToModel(dto: MovieRequestDto?): Movie {
+        val movie = Movie()
+        movie.title = dto?.title
+        movie.description = dto?.description
+        return movie
     }
 
-    @Override
-    public MovieResponseDto mapToDto(Movie movie) {
-        MovieResponseDto responseDto = new MovieResponseDto();
-        responseDto.setId(movie.getId());
-        responseDto.setTitle(movie.getTitle());
-        responseDto.setDescription(movie.getDescription());
-        return responseDto;
+    override fun mapToDto(movie: Movie?): MovieResponseDto {
+        val responseDto = MovieResponseDto()
+        responseDto.id = movie?.id
+        responseDto.title = movie?.title
+        responseDto.description = movie?.description
+        return responseDto
     }
 }

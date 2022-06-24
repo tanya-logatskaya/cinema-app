@@ -1,7 +1,7 @@
 package cinema.controller;
 
-import cinema.dto.request.UserRequestDto;
-import cinema.dto.response.UserResponseDto;
+import cinema.dto.UserRequestDto;
+import cinema.dto.UserResponseDto;
 import cinema.model.User;
 import cinema.service.AuthenticationService;
 import cinema.service.mapper.ResponseDtoMapper;

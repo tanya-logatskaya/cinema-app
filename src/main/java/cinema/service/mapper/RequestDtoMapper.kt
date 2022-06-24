@@ -1,5 +1,5 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-public interface RequestDtoMapper<D, T> {
-    T mapToModel(D dto);
+interface RequestDtoMapper<D, T> {
+    fun mapToModel(dto: D): T
 }

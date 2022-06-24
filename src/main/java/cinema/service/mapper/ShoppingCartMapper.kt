@@ -1,24 +1,19 @@
-package cinema.service.mapper;
+package cinema.service.mapper
 
-import cinema.dto.response.ShoppingCartResponseDto;
-import cinema.model.ShoppingCart;
-import cinema.model.Ticket;
-import org.springframework.stereotype.Component;
-
-import java.util.stream.Collectors;
+import cinema.dto.ShoppingCartResponseDto
+import cinema.model.ShoppingCart
+import cinema.model.Ticket
+import org.springframework.stereotype.Component
+import java.util.stream.Collectors
 
 @Component
-public class ShoppingCartMapper implements
-        ResponseDtoMapper<ShoppingCartResponseDto, ShoppingCart> {
-
-    @Override
-    public ShoppingCartResponseDto mapToDto(ShoppingCart shoppingCart) {
-        ShoppingCartResponseDto responseDto = new ShoppingCartResponseDto();
-        responseDto.setUserId(shoppingCart.getUser().getId());
-        responseDto.setTicketIds(shoppingCart.getTickets()
-                .stream()
-                .map(Ticket::getId)
-                .collect(Collectors.toList()));
-        return responseDto;
+class ShoppingCartMapper : ResponseDtoMapper<ShoppingCartResponseDto?, ShoppingCart?> {
+    override fun mapToDto(shoppingCart: ShoppingCart?): ShoppingCartResponseDto {
+        val responseDto = ShoppingCartResponseDto()
+        responseDto.userId = shoppingCart?.user?.id
+        responseDto.ticketIds = shoppingCart?.tickets
+            ?.map { it.id }
+            ?.toList()
+        return responseDto
     }
 }
