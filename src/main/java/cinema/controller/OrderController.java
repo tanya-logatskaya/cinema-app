@@ -1,6 +1,6 @@
 package cinema.controller;
 
-import cinema.dto.response.OrderResponseDto;
+import cinema.dto.OrderResponseDto;
 import cinema.model.Order;
 import cinema.model.ShoppingCart;
 import cinema.model.User;
